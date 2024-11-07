@@ -9,9 +9,22 @@ const name = 'Mario';
 
 
 // Dichiara la funzione qui.
+const getCurrentItem = (name) => {
+    const now = new Date();
+    const orario = now.getHours();
+    let message = 'Buona sera';
+    if (orario < 13 && orario > 0){
+        message = `Buongiorno`;
+    } else if (orario >= 13 && orario <= 17 ) {
+        message = `Buon pomeriggio`;
+    }
+    return `${message} ${name}`;
+}
 
 
 // Invoca la funzione qui e stampa il risultato in console
+const messaggio = getCurrentItem(name);
+console.log(messaggio);
 
 
 
